@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -14,13 +17,16 @@
   }
 }
 
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
 .App-header {
-  background-color: #0e0e0e;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 0px 16px;
@@ -28,6 +34,7 @@
 
 html, body {
   height: 100%;
+  background-color: #0e0e0e;
 }
 
 #root {
@@ -36,6 +43,12 @@ html, body {
 
 .thetime {
   font-size: 8vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .thetime {
+    font-size: 13vw;
+  }
 }
 
 .thedate {
@@ -52,5 +65,15 @@ html, body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
   }
 }
