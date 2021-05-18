@@ -11,6 +11,20 @@
   pointer-events: none;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  color: skyblue;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -70,6 +84,10 @@ html, body {
 
 h1 {
   font-size: 3rem;
+}
+
+h3 {
+  color: white;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,20 +1,18 @@
 import './App.css';
-import { Footer } from './app/Footer';
-import { Clock } from './app/Clock';
+import { Route } from 'react-router';
+import { MainPage } from './app/main/main';
+import { Country } from './app/country/country';
+import { City } from './app/city/city';
 
 function App() {
   
   return (
-    <div className="App">
-      <header style={{ paddingTop: '2rem' }}>
-        <h1>The time now</h1>
-        <h2>Your real-time clock.</h2>
-      </header>
-      <div className='centered'>
-        <Clock />
-      </div>
-      <Footer />
-    </div>
+    <>
+      <Route exact path='/' component={MainPage}/>
+      <Route exact path='/:country' component={Country}/>
+      <Route exact path='/:country/:city' component={City}/>
+    </>
+    
   );
 }
 

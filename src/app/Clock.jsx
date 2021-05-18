@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import moment from 'moment';
+import { calcTime } from '../data/utils';
 
-export const Clock = () => {
-  const [time, setTime] = useState(new Date());
+export const Clock = (props) => {
+  const { offset } = props;
+  const getTime = () => offset ? calcTime(offset) : new Date();
+
+  const [time, setTime] = useState(getTime());
   const second = 1000;
 
   const displayDate = () => {
@@ -15,7 +19,7 @@ export const Clock = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setTime(new Date());
+      setTime(getTime());
     }, second)
   }, [time])
 
